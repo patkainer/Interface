@@ -3,6 +3,7 @@ package listkart;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class DemoKart {
 
@@ -24,5 +25,17 @@ public class DemoKart {
         Collections.sort(kk, new CartUsernameComperator());
         System.out.println("kk = " + kk);
 
+        Collections.sort(kk, new Comparator<Kart>() {
+            @Override
+            public int compare(Kart o1, Kart o2) {
+
+                return Integer.compare(o1.getNumArticles(),o2.getNumArticles());
+            }
+        });
+
+        Collections.sort(kk, (p1, p2) -> p1.getUsername().compareTo(p2.getUsername()));
+        System.out.println("kk = " + kk);
+        Collections.sort(kk, Comparator.comparing(Kart::getUsername));
+        System.out.println("kk = " + kk);
     }
 }
