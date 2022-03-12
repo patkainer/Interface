@@ -1,9 +1,6 @@
 package listkart;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class DemoKart {
 
@@ -37,5 +34,7 @@ public class DemoKart {
         System.out.println("kk = " + kk);
         Collections.sort(kk, Comparator.comparing(Kart::getUsername));
         System.out.println("kk = " + kk);
+
+
     }
 }
